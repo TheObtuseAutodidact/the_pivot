@@ -59,7 +59,7 @@ FactoryGirl.define do
   factory :category do
     title { generate(:category_title) }
     slug
-    category_image "https://static.pexels.com/photos/2759/clouds-cloudy-forest-trees.jpg"
+    image_url "https://static.pexels.com/photos/2759/clouds-cloudy-forest-trees.jpg"
 
     factory :category_with_items do
       transient do

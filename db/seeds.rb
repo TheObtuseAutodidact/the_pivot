@@ -14,7 +14,7 @@ class Seed
       category = Category.create!(
         title: category_names[i],
         slug: category_names[i].parameterize,
-        category_image: "http://lorempixel.com/300/300/nature/#{i}/"
+        image_url: "http://lorempixel.com/300/300/nature/#{i}/"
         )
       puts "Category #{i}: #{category.title} created!"
     end
@@ -28,7 +28,7 @@ class Seed
         title: "#{Faker::Commerce.product_name} (#{Random.new.rand(1..99999)})",
         description: Faker::Lorem.sentence(3),
         price: Faker::Number.between(1, 10000),
-        image_url: category.category_image,
+        image_url: category.image_url,
         )
         Store.all.sample.items << item
         puts "#{category.title.capitalize}'s Item #{i}: Item #{item.title} created!"

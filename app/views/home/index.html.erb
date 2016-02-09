@@ -9,7 +9,7 @@
   <h4 class="centered-header">Our Initiatives</h4><br>
   <%= @top_categories.each do |category| %>
     <div class="col s4 m4 l4 center">
-      <img src=" <%= category.category_image %>" alt="" class="circle responsive-img" id="featured-circles">
+      <img src=" <%= category.image_url %>" alt="" class="circle responsive-img" id="featured-circles">
       <p><%= link_to category.title, category_path(category)%></p>
     </div>
   <% end %>
