@@ -5,16 +5,17 @@
 
 <div class="container">
 <!-- Sitewide Sales Sumary Data -->
+      <h4>Site-wide Sales Summary Data</h4>
+      <a class="btn platform-admin-tables">Hide / Display</a>
       <table class="bordered highlight responsive-table">
         <thead>
-            <h4>Site-wide Sales Summary Data</h4>
           <tr>
             <th data-field="total-sales">Total Sales</th>
-              <th data-field="category-sales">Category 1 Sales</th>
-              <th data-field="current-month">Current Month Sales</th>
+            <th data-field="category-sales">Category 1 Sales</th>
+            <th data-field="current-month">Current Month Sales</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id= 'sales-table-body'>
           <tr>
             <td>$398.76</td>
             <td>$42.87</td>
@@ -23,9 +24,10 @@
         </tbody>
       </table><br><br>
     <!-- Pending Stores -->
+      <h4>Pending Stores</h4>
+      <a class="btn platform-admin-tables">Hide / Display</a>
       <table class="bordered highlight responsive-table">
-        <thead>
-            <h4>Pending Stores</h4>
+        <thead class='platform-admin-tables'>
           <tr>
               <th data-field="title">Store Title</th>
               <th data-field="owner">Owner</th>
@@ -55,11 +57,10 @@
         </tbody>
       </table><br><br>
       <!-- all other stores -->
+      <h4>All Stores</h4>
+      <a class="btn platform-admin-tables">Hide / Display</a>
       <table class="bordered highlight responsive-table">
-        <thead>
-          <tr>
-            <h4>All Stores<h4>
-          </tr>
+        <thead class='platform-admin-tables'>
           <tr>
               <th data-field="title">Store Title</th>
               <th data-field="owner">Owner</th>
@@ -67,7 +68,7 @@
               <th data-field="status">Active / Declined / Closed</th>
           </tr>
         </thead>
-        <tbody>
+          <tbody>
           <tr>
             <td>Jeffs Store</td>
             <td>Jeff Johnson</td>
@@ -89,3 +90,18 @@
         </tbody>
       </table><br><br>
 </div>
+
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script>
+$(document).ready(function () {
+  $('.dad-filter').click(function () {
+    $('.dad-admin-order-table').addClass("hidden")
+
+
+
+
+<!-- $(document).ready(function() {
+  $("span").text("$100");
+}); -->
+<!-- <script src="jquery.min.js"></script> -->
+<!-- <script src="application.js"></script> -->
