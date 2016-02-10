@@ -1,3 +1,16 @@
+<div class="row container" id="filter-items-section">
+  <h4 class="centered-header"> <%= @category.title %></h4><br>
 
+	<div class="col s3 m3 l3 filter-sidebar">
+	  <h5 id="filter-category-header">Frequency</h5>
+	    <%= form_tag(search_path, method: :get, id: "filter-sidebar", remote: true) do %>
+	      <%= check_box_tag("params[active]", true) %>
+	      <%= label_tag("params_active", "Active") %>
+	      <br>
+	      <%= submit_tag("Submit") %>
+	    <% end %>
+	</div>
 
-<%= render partial: "partials/grid_item", collection: @category.items, as: :item  %>
+	<%= render partial: 'partials/store_show_all_items' %>
+
+</div>

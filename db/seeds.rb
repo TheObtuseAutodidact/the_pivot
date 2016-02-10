@@ -28,7 +28,7 @@ class Seed
         title: "#{Faker::Commerce.product_name} (#{Random.new.rand(1..99999)})",
         description: Faker::Lorem.sentence(3),
         price: Faker::Number.between(1, 10000),
-        image_url: category.image_url,
+        image_url: "http://mightytreemovers.com/wp-content/uploads/2013/05/tree.jpg",
         )
         Store.all.sample.items << item
         puts "#{category.title.capitalize}'s Item #{i}: Item #{item.title} created!"

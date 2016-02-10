@@ -31,8 +31,9 @@
   max-width: 65%;
   min-width: 450px;
   font-family: 'Amaranth', sans-serif;
-  p {
+  p a {
    font-size: 25px;
+   color: #49412c;
   }
 }
 
@@ -99,15 +100,26 @@ nav .brand-logo {
   min-width: 200px;
 }
 
+.centered-header a {
+  font-family: 'Amaranth', sans-serif;
+  text-align: center;
+  color: #49412c;
+}
+
 .centered-header {
   font-family: 'Amaranth', sans-serif;
   text-align: center;
+  color: #49412c;
 }
 
 #hr-divider {
+  height: 1px;
+  color: #B6B6B4;
+  background-color: #B6B6B4;
+  border: none;
   width: 300px;
   margin-bottom: 50px;
-  border-color: #B6B6B4;
+  line-color: #B6B6B4;
 }
 
   // Filters
@@ -122,10 +134,7 @@ nav .brand-logo {
   #filter-category-header {
     border-bottom: #B6B6B4 solid 1px;
     padding-bottom: 5px;
-  }
-
-  .items-index-filterable {
-
+    color: #49412c;
   }
 
   #filter-section {
@@ -133,30 +142,64 @@ nav .brand-logo {
   }
 
   // Item Cards
+  #card-image img {
+    display:block;
+}
+
+  .card {
+    min-width: 230px;
+    max-width: 230px;
+    margin-right: 10px;
+    min-height: 400px;
+    max-height: 400px;
+  }
+
+  .card-bottom-qty {
+    margin: auto;
+    text-align:center;
+  }
+
   .item-card {
     min-height: 250px;
     max-height: 250px;
-    padding: 20px;
     line-height: 20px;
   }
 
-  .card-title a {
-    font-size: 18px;
-    color: #000000;
+  .card-title-alt a {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 20px;
+    color: #49412c;
   }
 
-  #card-image {
-    padding: 20px;
-    max-height: 150px;
-    max-width: 150px;
+  #card-store-title a {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 12px;
+    color: #97743a;
+  }
+
+  #card-item-price {
+    padding-bottom: 5px;
   }
 
 
     // Buttons
-    .add-to-cart {
-      background: #000000;
+    .card-item-btn {
+      border-top: 1px solid #C0C0C0;
+      background-color: transparent;
+      font-size: 13px;
       font-family: 'Amaranth', sans-serif;
+      color: #49412c;
     }
+    .card-item-btn:hover {
+      background-color: #000000;
+      background: #FFFFFF;
+      color: #49412c;
+    }
+    .card-item-btn:active {
+      color: #49412c;
+    }
+
+
 
 
 // * Store Show Page
@@ -229,7 +272,9 @@ nav .brand-logo {
 
 input.qty-selector {
   height: 20px;
+  width: 40px;
   border-bottom: none;
+  text-align: center;
 }
 
 hr {

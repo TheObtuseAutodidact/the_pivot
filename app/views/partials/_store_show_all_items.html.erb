@@ -1,34 +1,27 @@
-<div class= 'col s9 m9 l9' id="item-index" >
+<div class="col s9 m9 l9" id="" >
   <% @items.each do |item| %>
-    <div class="col s4 m4 l4 item_<%= item.id %>" id=store_items_for_sale >
-      <div class="card center medium">
-        <div  class="link_to_item_show" >
-          <a href="<%= store_item_path(item.store.slug, item.slug) %>">
+    <div class="card col s4 m4 l4 center">
+      <div class="card-content">
+        <div class="card-image">
+          <img src='<%= item.image_url %>' id="card-image"> <!-- replace with item image -->
+          <span class="card-title-alt"><%= link_to item.title, store_item_path(item.store.slug, item.slug) %></span>
+        </div>
+          <div id="card-store-title">
+            <%= link_to item.store.title, store_path(item.store.slug) %>
+            <br>
+            <p id="card-item-price"><%= number_to_currency(item.price) %></p>
+          </div>
 
-        <img src=<%= item.image_url %> id="card-image"> <!-- replace with item image -->
-        <br>
-          <span class="card-title"><%= item.title %></span>
-        <div class="card-content">
-          <p class="truncate"><%= item.description %></p>
-          <p>Sold by: <%= link_to item.store.title, store_path(item.store.slug) %></p>
-          <P>$<%= number_to_currency(item.price) %></p>
-          </div>
-        </a>
-      </div>
-      <div class="card-action row col s12 m4 l8">
-        <%= form_for(:cart_item, url: cart_items_path(item_id: item.id)) do |f| %>
-          <div class="col s2 m2 l2">
+
+        <div class="card-action">
+          <%= form_for(:cart_item, url: cart_items_path(item_id: item.id)) do |f| %>
             <%= f.label "Qty:", class: "qty-label" %>
-          </div>
-          <div class="col s3 m3 l3">
             <%= f.number_field(:quantity, in: 1.0..20.0, value: 1, class: "qty-selector") %>
-          </div>
-          <div class="col s7 m7 l7">
-            <%= f.submit "Add To Cart", class: "btn" %>
-          </div>
-        <% end %>
-      </div>
+            <%= f.submit "Add To Cart", class: 'btn card-item-btn' %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
+
